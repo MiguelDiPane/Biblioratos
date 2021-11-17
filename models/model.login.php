@@ -1,7 +1,6 @@
 <?php
     class LoginModel{
         public function login($usuario,$clave){
-            global $AdminUser;
             #Genero el hash sha1 con la clave
             $clave_codificada = sha1($clave);
             
@@ -20,14 +19,6 @@
         public function logout(){
             #session_unset — Libera todas las variables de sesión
             session_unset();
-        }
-
-        public function checkPassword($clave){
-            global $AdminUser;
-            if($clave == $AdminUser['clave']){
-                return true;
-            }
-            return false;            
         }
     }
 

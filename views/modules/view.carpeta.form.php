@@ -89,8 +89,8 @@
                                 foreach($departamentos as $depto){
 
                                     #Para mostrar el departamento al modificar carpeta, departamento viene del formulario
-                                    if($departamento == $depto){
-                                        echo "<option selected value=\"$depto[nombre_departamento]\">$depto[nombre_departamento]</option>";
+                                    if($departamento == $depto['nombre_departamento']){
+                                        echo "<option selected value=\"$departamento\">$departamento</option>";
                                     }
                                     else{
                                         echo "<option value=\"$depto[nombre_departamento]\">$depto[nombre_departamento]</option>";

@@ -3,19 +3,16 @@
         <div class="col-5 mb-5">
         <h2 class="text-center">
             <?php 
-                    if($operacion == 'baja'){
-                        if($carpeta['dado_de_baja'] == 0){
-                            echo "Dar de baja";
-                        }
-                        else{
-                            echo "Dar de alta";
-                        }
-                        
+                if($operacion == 'baja'){
+                    if($carpeta['dado_de_baja'] == 0){
+                        echo "Dar de baja";
                     }
-                    elseif($operacion == 'borrar'){
-                        echo "Borrar";
+                    else{
+                        echo "Dar de alta";
                     }
-                ?> 
+                    
+                }
+            ?> 
         </h2>
         <h5 class="text-center">
             <?php 
@@ -25,10 +22,7 @@
         
         <form action=<?php 
             if($operacion == 'baja'){
-                    echo "index.php?action=abmCarpetas&order=baja&id=$id&estado=$carpeta[dado_de_baja]";
-            }
-            elseif($operacion == 'borrar'){
-                echo "index.php?action=abmCarpetas&order=borrar&id=$id";  
+                echo "index.php?action=abmCarpetas&order=baja&id=$id&estado=$carpeta[dado_de_baja]";
             }
         ?> 
         method="POST" class="formulario mt-5"> 
@@ -53,16 +47,10 @@
                                 else{
                                     echo "<button type=\"submit\" class=\"btn btn-success\">Dar de alta</button>";
                                 }
-                            }
-                            elseif($operacion == 'borrar'){
-                                echo "<button type=\"submit\" class=\"btn btn-danger\">Borrar</button>";
-                            }
-                            
+                            }                           
                         ?>
                     </div>
-                </div>
-                                    
-
+                </div>                               
         </form>
         <?php
         if (isset($mensaje)){

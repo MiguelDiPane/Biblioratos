@@ -107,7 +107,7 @@
                 elseif($order == 'baja'){
                     $id = $_GET['id'];
                     $modelLogin = new LoginModel();
-                    $check = $modelLogin->checkPassword($_POST['clave']);
+                    $check = $modelLogin->login($_SESSION['usuario'],$_POST['clave']);
                     if ($check){
                         $estado = !$_GET['estado']; #Invierto el valor de estado para dar de baja o de alta
                         $model->cambiarEstado($id,$estado);
